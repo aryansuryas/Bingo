@@ -1,5 +1,5 @@
 /**
- * Bingo Game Logic with Bot Hiding Mechanics
+ * Notebook Bingo Game Logic with Bot Hiding Mechanics
  */
 
 let playerBoard = [];
@@ -13,23 +13,42 @@ let botLinesCount = 0;
 
 const winningCombinations = [
     // Rows
-    [0,1,2,3,4], [5,6,7,8,9], [10,11,12,13,14], [15,16,17,18,19], [20,21,22,23,24],
+    { type: 'horizontal', indices: [0,1,2,3,4] }, { type: 'horizontal', indices: [5,6,7,8,9] }, { type: 'horizontal', indices: [10,11,12,13,14] }, { type: 'horizontal', indices: [15,16,17,18,19] }, { type: 'horizontal', indices: [20,21,22,23,24] },
     // Columns
-    [0,5,10,15,20], [1,6,11,16,21], [2,7,12,17,22], [3,8,13,18,23], [4,9,14,19,24],
+    { type: 'vertical', indices: [0,5,10,15,20] }, { type: 'vertical', indices: [1,6,11,16,21] }, { type: 'vertical', indices: [2,7,12,17,22] }, { type: 'vertical', indices: [3,8,13,18,23] }, { type: 'vertical', indices: [4,9,14,19,24] },
     // Diagonals
-    [0,6,12,18,24], [4,8,12,16,20]
+    { type: 'diagonal-main', indices: [0,6,12,18,24] }, { type: 'diagonal-anti', indices: [4,8,12,16,20] }
 ];
 
 // DOM Elements
 const playerGridEl = document.getElementById('player-grid');
 const botGridEl = document.getElementById('bot-grid');
-const playerLinesEl = document.querySelector('#player-lines .count');
-const botLinesEl = document.querySelector('#bot-lines .count');
+const playerLinesEl = document.getElementById('player-lines');
+const botLinesEl = document.getElementById('bot-lines');
 const statusEl = document.getElementById('game-status');
 const overlayEl = document.getElementById('game-over-overlay');
 const winnerTextEl = document.getElementById('winner-text');
 const winnerSubheadEl = document.getElementById('winner-subhead');
 const restartBtn = document.getElementById('restart-btn');
+
+const welcomeOverlay = document.getElementById('welcome-overlay');
+const playerNameInput = document.getElementById('player-name-input');
+const startGameBtn = document.getElementById('start-game-btn');
+const playerNameDisplay = document.getElementById('player-name-display');
+
+let playerName = "You";
+
+startGameBtn.addEventListener('click', () => {
+    const inputVal = playerNameInput.value.trim();
+    if (inputVal) {
+        playerName = inputVal;
+    } else {
+        playerName = "Player";
+    }
+    playerNameDisplay.textContent = playerName;
+    welcomeOverlay.classList.add('hidden');
+    initGame();
+});
 
 function initGame() {
     isGameOver = false;
@@ -97,8 +116,8 @@ function handlePlayerClick(number) {
         isPlayerTurn = false;
         updateStatusUI();
         
-        // Slightly random thinking time for realism
-        setTimeout(botTurn, 1000 + Math.random() * 800);
+        // Simulate thinking time (bot is pretending to scan its paper board!)
+        setTimeout(botTurn, 800 + Math.random() * 600);
     }
 }
 
@@ -153,7 +172,7 @@ function markCellUI(gridEl, number) {
         if (parseInt(cell.dataset.number, 10) === number && !cell.classList.contains('marked')) {
             cell.classList.add('marked');
             
-            // If it's a bot cell, reveal it since it's now marked (called out)
+            // If it's a bot cell, reveal it since it's now marked
             if (cell.dataset.owner === 'bot' && cell.classList.contains('hidden-number')) {
                 cell.textContent = number;
                 cell.classList.remove('hidden-number');
@@ -167,7 +186,7 @@ function checkLines(boardArray) {
     let completedCombos = [];
     
     winningCombinations.forEach((combo) => {
-        const isComplete = combo.every(index => markedNumbers.has(boardArray[index]));
+        const isComplete = combo.indices.every(index => markedNumbers.has(boardArray[index]));
         if (isComplete) {
             lines++;
             completedCombos.push(combo);
@@ -180,35 +199,41 @@ function checkLines(boardArray) {
 function highlightLines(gridEl, completedCombos) {
     const cells = gridEl.querySelectorAll('.cell');
     completedCombos.forEach(combo => {
-        combo.forEach(index => {
+        combo.indices.forEach(index => {
             const cell = cells[index];
-            if (!cell.classList.contains('bingo-line')) {
-                cell.classList.add('bingo-line');
-            }
+            cell.classList.add('bingo-line');
+            cell.classList.add('bingo-line-' + combo.type);
         });
     });
 }
 
+function formatBingoWord(count) {
+    const word = "BINGO";
+    const letters = word.substring(0, Math.min(count, 5));
+    const blanks = "_".repeat(5 - Math.min(count, 5));
+    return (letters + blanks).split('').join(' ');
+}
+
 function updateScoreUI() {
-    playerLinesEl.textContent = playerLinesCount;
-    botLinesEl.textContent = botLinesCount;
+    playerLinesEl.textContent = formatBingoWord(playerLinesCount);
+    botLinesEl.textContent = formatBingoWord(botLinesCount);
 }
 
 function updateStatusUI() {
     if (isGameOver) return;
     
     if (isPlayerTurn) {
-        statusEl.textContent = "Your Turn";
+        statusEl.textContent = "Your Turn!";
         statusEl.className = "status-bar player-turn";
     } else {
-        statusEl.textContent = "AI Thinking...";
+        statusEl.textContent = "Bot is thinking...";
         statusEl.className = "status-bar bot-turn";
     }
 }
 
 function endGame(winner) {
     isGameOver = true;
-    statusEl.textContent = "Game Over";
+    statusEl.textContent = "Game Over!";
     statusEl.className = "status-bar";
     
     // Reveal all remaining bot numbers for analysis
@@ -226,21 +251,23 @@ function endGame(winner) {
         
         if (winner === 'player') {
             winnerTextEl.textContent = "You Win!";
+            winnerTextEl.classList.remove('bot-win', 'draw');
             winnerTextEl.classList.add('player-win');
-            winnerSubheadEl.textContent = "Spectacular Bingo!";
+            winnerSubheadEl.textContent = playerName + ", you totally scribbled them out!";
         } else if (winner === 'bot') {
-            winnerTextEl.textContent = "Bot Wins";
+            winnerTextEl.textContent = "Bot Wins!";
+            winnerTextEl.classList.remove('player-win', 'draw');
             winnerTextEl.classList.add('bot-win');
-            winnerSubheadEl.textContent = "AI Dominance.";
+            winnerSubheadEl.textContent = "Outsmarted by a doodle AI.";
         } else {
-            winnerTextEl.textContent = "It's a Draw!";
+            winnerTextEl.textContent = "Draw!";
+            winnerTextEl.classList.remove('player-win', 'bot-win');
             winnerTextEl.classList.add('draw');
-            winnerSubheadEl.textContent = "A Rare Tie!";
+            winnerSubheadEl.textContent = "A perfect tie!";
         }
-    }, 1500); // Give user time to see the final revealed board before the modal covers it
+    }, 1200);
 }
 
 restartBtn.addEventListener('click', initGame);
 
-// Start game initially
-initGame();
+// Note: Initial game starts after name modal is submitted.

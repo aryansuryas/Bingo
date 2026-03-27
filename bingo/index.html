@@ -1,40 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Premium Bingo vs AI</title>
-    <meta name="description" content="A visually stunning 5x5 Bingo game against a computer AI with 3D effects.">
+    <title>Doodle Bingo | Developed by Aryan Surya S</title>
+    <meta name="description" content="A fun paper-themed 5x5 Bingo game developed by Aryan Surya S.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Righteous&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- 3D Background Elements -->
-    <div class="bg-shapes">
-        <div class="shape cube cube-1"></div>
-        <div class="shape cube cube-2"></div>
-        <div class="shape sphere sphere-1"></div>
-        <div class="shape sphere sphere-2"></div>
-    </div>
-
     <div id="app">
         <header>
-            <h1 class="title-3d">BINGO CLASH</h1>
-            <div id="game-status" class="status-bar">Player's Turn</div>
+            <h1 class="sketch-title">DOODLE BINGO</h1>
+            <div id="game-status" class="status-bar">Waiting to start...</div>
         </header>
 
         <main class="game-container">
             <div class="board-section player-section">
                 <div class="sidebar">
-                    <h2 class="board-title">Player</h2>
-                    <div id="player-lines" class="lines-count">
-                        <span class="count">0</span><span class="slash">/</span><span class="total">5</span>
-                        <div class="lines-label">Lines</div>
+                    <h2 id="player-name-display" class="board-title">You</h2>
+                    <div class="lines-count">
+                        <div id="player-lines" class="bingo-word">_ _ _ _ _</div>
                     </div>
                 </div>
                 <div id="player-grid" class="bingo-grid"></div>
@@ -44,23 +32,34 @@
                 <div id="bot-grid" class="bingo-grid bot-mode"></div>
                 <div class="sidebar bot-sidebar">
                     <h2 class="board-title">AI Bot</h2>
-                    <div id="bot-lines" class="lines-count bot-lines">
-                        <span class="count">0</span><span class="slash">/</span><span class="total">5</span>
-                        <div class="lines-label">Lines</div>
+                    <div class="lines-count bot-lines">
+                        <div id="bot-lines" class="bingo-word">_ _ _ _ _</div>
                     </div>
                 </div>
             </div>
         </main>
-
+        
         <div id="game-over-overlay" class="overlay hidden">
-            <div class="modal glass-3d">
+            <div class="modal paper-modal">
                 <h2 id="winner-text">You Win!</h2>
                 <p id="winner-subhead">Bingo Achieved</p>
-                <button id="restart-btn" class="btn-3d">Play Again</button>
+                <button id="restart-btn" class="btn-sketch">Play Again</button>
             </div>
         </div>
+
+        <div id="welcome-overlay" class="overlay">
+            <div class="modal paper-modal">
+                <h2 style="font-size: 3rem; margin-bottom: 0.5rem;">Welcome to Bingo!</h2>
+                <p>What should we call you?</p>
+                <input type="text" id="player-name-input" class="sketch-input" placeholder="Enter your name..." maxlength="12">
+                <button id="start-game-btn" class="btn-sketch">Let's Play!</button>
+            </div>
+        </div>
+        
+        <footer class="copyright">
+            &copy; 2026 Developed by Aryan Surya S. All rights reserved.
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
