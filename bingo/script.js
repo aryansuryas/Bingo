@@ -198,11 +198,19 @@ function checkLines(boardArray) {
 
 function highlightLines(gridEl, completedCombos) {
     const cells = gridEl.querySelectorAll('.cell');
+    
+    // Clear old lines before redrawing
+    cells.forEach(cell => {
+        const existingLines = cell.querySelectorAll('.strike-line');
+        existingLines.forEach(l => l.remove());
+    });
+
     completedCombos.forEach(combo => {
         combo.indices.forEach(index => {
             const cell = cells[index];
-            cell.classList.add('bingo-line');
-            cell.classList.add('bingo-line-' + combo.type);
+            const line = document.createElement('div');
+            line.classList.add('strike-line', 'strike-' + combo.type);
+            cell.appendChild(line);
         });
     });
 }

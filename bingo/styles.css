@@ -80,7 +80,7 @@ header {
     /* Hand-drawn border radius */
     border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
     background: #fff;
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+    box-shadow: 4px 4px 0px var(--ink-dark);
     transition: all 0.3s ease;
     transform: rotate(1deg);
 }
@@ -109,7 +109,7 @@ header {
     padding: 2rem;
     border: 3px solid var(--ink-dark);
     border-radius: 10px 255px 15px 225px / 255px 15px 225px 15px; /* Sketchy shape */
-    box-shadow: 4px 5px 6px rgba(0,0,0,0.05);
+    box-shadow: 8px 8px 0px var(--ink-dark);
     transition: transform 0.2s;
 }
 
@@ -254,14 +254,8 @@ header {
     100% { transform: scale(1); }
 }
 
-/* Bingo Highlight / Crossing Line */
-.cell.bingo-line {
-    position: relative;
-}
-
-/* Create a pencil strike-through for bingo lines */
-.cell.bingo-line::before {
-    content: '';
+/* Bingo Highlight / Crossing Line Elements */
+.strike-line {
     position: absolute;
     top: 50%;
     left: -10%;
@@ -271,12 +265,19 @@ header {
     border-radius: 10px;
     z-index: 2;
     opacity: 0.8;
+    pointer-events: none;
+    animation: strikeDraw 0.2s ease-out forwards;
 }
 
-.cell.bingo-line-horizontal::before { transform: rotate(-2deg); }
-.cell.bingo-line-vertical::before { transform: rotate(88deg); width: 130%; left: -15%; }
-.cell.bingo-line-diagonal-main::before { transform: rotate(45deg); width: 140%; left: -20%; }
-.cell.bingo-line-diagonal-anti::before { transform: rotate(-45deg); width: 140%; left: -20%; }
+@keyframes strikeDraw {
+    from { opacity: 0; width: 0; }
+    to { opacity: 0.8; }
+}
+
+.strike-horizontal { transform: rotate(-2deg); }
+.strike-vertical { transform: rotate(88deg); width: 130%; left: -15%; }
+.strike-diagonal-main { transform: rotate(45deg); width: 140%; left: -20%; }
+.strike-diagonal-anti { transform: rotate(-45deg); width: 140%; left: -20%; }
 
 /* Modal / Overlay */
 .overlay {
@@ -304,7 +305,7 @@ header {
     border: 3px solid var(--ink-dark);
     border-radius: 2% 95% 3% 95% / 95% 4% 92% 5%;
     text-align: center;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+    box-shadow: 12px 12px 0px var(--ink-dark);
     display: flex;
     flex-direction: column;
     gap: 1rem;
