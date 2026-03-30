@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doodle Bingo | Developed by Aryan Surya S</title>
+    <meta name="description" content="A fun paper-themed 5x5 Bingo game developed by Aryan Surya S.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1 class="sketch-title">DOODLE BINGO</h1>
+            <div id="game-status" class="status-bar">Waiting to start...</div>
+        </header>
+
+        <main class="game-container">
+            <div class="board-section player-section">
+                <div class="sidebar">
+                    <h2 id="player-name-display" class="board-title">You</h2>
+                    <div class="lines-count">
+                        <div id="player-lines" class="bingo-word">_ _ _ _ _</div>
+                    </div>
+                </div>
+                <div id="player-grid" class="bingo-grid"></div>
+            </div>
+
+            <div class="board-section bot-section">
+                <div id="bot-grid" class="bingo-grid bot-mode"></div>
+                <div class="sidebar bot-sidebar">
+                    <h2 class="board-title">AI Bot</h2>
+                    <div class="lines-count bot-lines">
+                        <div id="bot-lines" class="bingo-word">_ _ _ _ _</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="game-over-overlay" class="overlay hidden">
+            <div class="modal paper-modal">
+                <h2 id="winner-text">You Win!</h2>
+                <p id="winner-subhead">Bingo Achieved</p>
+                <button id="restart-btn" class="btn-sketch">Play Again</button>
+            </div>
+        </div>
+
+        <div id="welcome-overlay" class="overlay">
+            <div class="modal paper-modal">
+                <h2 style="font-size: 3rem; margin-bottom: 0.5rem;">Welcome to Bingo!</h2>
+                <p>What should we call you?</p>
+                <input type="text" id="player-name-input" class="sketch-input" placeholder="Enter your name..."
+                    maxlength="12">
+                <button id="start-game-btn" class="btn-sketch">Let's Play!</button>
+            </div>
+        </div>
+        <div id="how-to-play-overlay" class="overlay hidden">
+            <div class="modal paper-modal help-modal">
+                <h2 style="font-size: 3rem;">How to Play</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon">📝</div>
+                        <div class="step-text"><strong>1. The Board</strong><br>You and the Bot get a 5x5 board with numbers 1-25.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🎯</div>
+                        <div class="step-text"><strong>2. Take Turns</strong><br>Click a number on your turn to strike it.</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">❌️</div>
+                        <div class="step-text"><strong>3. Strike Numbers</strong><br>The chosen number is marked on BOTH boards!</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🏆</div>
+                        <div class="step-text"><strong>4. Win the Game</strong><br>Complete 5 lines (horizontal, vertical, or diagonal) to spell B-I-N-G-O!</div>
+                    </div>
+                </div>
+                <button id="close-help-btn" class="btn-sketch">Got it!</button>
+            </div>
+        </div>
+        <!--as-->
+        <footer class="copyright">
+            &copy; 2026 Developed by Aryan Surya S. All rights reserved.
+        </footer>
+    </div>
+    
+    <button id="how-to-play-btn" class="btn-sketch help-btn" title="How to play">❓</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
