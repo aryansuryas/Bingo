@@ -1,5 +1,5 @@
-# Bingo Game Development Plan
--by Aryan Surya S
+# Bingo Game 
+-Website built by Aryan Surya S
 ## Goal Description
 Build a premium, fully responsive 5x5 Bingo web game where the user plays against a computer bot. The game will feature a 1-25 randomized layout for both players, share marked numbers (a number picked by either player is marked on both boards), and include win condition checks for 5-in-a-row (horizontal, vertical, or diagonal). The application will be written using high-quality HTML, CSS, and Vanilla JavaScript, emphasizing animations and a stunning UI.
 
