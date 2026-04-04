@@ -9,7 +9,7 @@
 ╚═════╝   ╚═╝  ╚═╝  ╚═══╝  ╚═════╝    ╚═════╝ 
 ```
 
-# 🎰 BINGO — Premium Web Game
+# 🎰 BINGO — Premium Web Game dev
 
 **A fully responsive, animated 5×5 Bingo game where you challenge an AI bot.**  
 *Crafted with pure HTML · CSS · Vanilla JavaScript*
