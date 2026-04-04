@@ -273,7 +273,7 @@ python3 -m http.server 8080
 </div>
 
 ---
-
+ss bw
 ## 📜 License
 
 ```
@@ -283,16 +283,4 @@ Just give credit where it's due. ✌️
 
 ---
 
-<div align="center">
-
-```
-  B  ·  I  ·  N  ·  G  ·  O
-  ─────────────────────────
-  Built with 💙 by Aryan Surya S
-  No frameworks were harmed in the 
-  making of this game.
-```
-
-⭐ **If you enjoyed this project, drop a star!** ⭐
-
-</div>
+s
