@@ -273,9 +273,7 @@ python3 -m http.server 8080
 </div>
 
 ---
-ss bw
-## 📜 License
-
+ li
 ```
 MIT License — Use it, fork it, ship it. 
 Just give credit where it's due. ✌️
