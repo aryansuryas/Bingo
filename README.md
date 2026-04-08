@@ -86,42 +86,7 @@ Lines can be:
 | 📱 **Fully Responsive** | Works beautifully on desktop, tablet, and mobile |
 
 ---
-
-## 🎨 Design System
-
-```
-┌─────────────────────────────────────┐
-│  VISUAL PHILOSOPHY                  │
-│  ─────────────────────────────────  │
-│  Dark radial cosmos background      │
-│  Glassmorphism board panels         │
-│  Cyan (#00E5FF)  → Player accent    │
-│  Pink (#FF4081)  → Bot accent       │
-│  Gold (#FFD600)  → Bingo / Win      │
-│  Purple (#B47CFF)→ Atmosphere       │
-│  Green (#69FF47) → Secondary pop    │
-└─────────────────────────────────────┘
-```
-
-### 🔤 Typography
-
-| Role | Font |
-|---|---|
-| Logo & Titles | **Bebas Neue** — bold, condensed, cinematic |
-| Numbers & Data | **Space Mono** — monospaced, technical precision |
-| UI Labels | **Syne** — modern, geometric, readable |
-
-### 💎 Effects Used
-
-- **Glassmorphism** — `backdrop-filter: blur()` on all panels and modals
-- **Layered orbs** — radial gradient blobs that drift across the background
-- **Grid overlay** — subtle geometric mesh for depth and texture
-- **Cell animations** — staggered entrance, scale-bounce on mark, ripple on click
-- **Bingo line flash** — gold glow animation sweeps complete lines
-- **Fireworks** — floating burst particles on the victory modal
-- **Typing indicator** — animated dots while the bot "thinks"
-
----
+ 
  
  
 
