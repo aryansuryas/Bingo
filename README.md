@@ -249,16 +249,7 @@ python3 -m http.server 8080
 
 ---
 
-## 🗺️ Roadmap / Ideas
-
-- [ ] 🔊 Sound effects (pick, mark, bingo fanfare)
-- [ ] 🎯 Difficulty levels (Easy / Medium / Hard bot)
-- [ ] 🌐 Multiplayer via WebSockets
-- [ ] 📊 Win/loss stats tracker (localStorage)
-- [ ] 🎨 Custom themes (neon, retro, pastel)
-- [ ] 📱 PWA support (install to homescreen)
-
----
+ 
 
 ## 👤 Author
 
