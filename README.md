@@ -122,97 +122,14 @@ Lines can be:
 - **Typing indicator** — animated dots while the bot "thinks"
 
 ---
+ 
+ 
 
-## 📁 Project Structure
+ 
+ 
 
-```
-bingo/
-│
-├── 📄 index.html        ← Game layout & DOM structure
-│   ├── Header with animated B·I·N·G·O logo
-│   ├── Turn indicator badge
-│   ├── Player board section (left)
-│   ├── VS divider + called numbers panel
-│   ├── Bot board section (right)
-│   ├── Game Over modal with fireworks
-│   └── Bot thinking indicator (slide-up toast)
-│
-├── 🎨 styles.css        ← All styling, animations, responsive rules
-│   ├── CSS custom properties (design tokens)
-│   ├── Background layer (orbs + grid)
-│   ├── Header & logo keyframes
-│   ├── Glass board panels
-│   ├── Cell states: default / hover / marked-player / marked-bot / bingo-line
-│   ├── Bingo tracker letters
-│   ├── Called numbers chips
-│   ├── Modal overlay & fireworks
-│   ├── Bot thinking toast
-│   └── Media queries (860px, 480px)
-│
-└── ⚙️  script.js         ← All game logic
-    ├── State management
-    ├── Board generation (Fisher-Yates shuffle)
-    ├── Win detection (all 12 lines)
-    ├── Bot AI (weighted line-completion scoring)
-    ├── Marking & call log
-    ├── UI rendering & cell click handling
-    └── Game restart
-```
-
----
-
-## 🧠 Bot AI — How It Thinks
-
-The bot isn't random. It uses a **weighted scoring strategy**:
-
-```javascript
-// For each available number, score it by how many
-// near-complete lines it belongs to on the bot's board:
-
-score += alreadyMarked² // quadratic reward for nearly-done lines
-
-// Plus a touch of randomness to keep it beatable:
-score += Math.random() * 1.5
-```
-
-This means the bot:
-- **Aggressively closes** lines that are 3–4 deep
-- **Occasionally surprises** you with unexpected picks
-- **Is beatable** — strategy and luck both matter
-
----
-
-## ⚙️ Technical Highlights
-
-```
-No frameworks. No build tools. No node_modules.
-One folder. Three files. Open and play.
-```
-
-| Aspect | Implementation |
-|---|---|
-| **State** | Plain JS variables + `Set` for O(1) mark lookups |
-| **Rendering** | DOM rebuilt on each mark with animation classes |
-| **Win check** | 12-line scan after every move (rows + cols + diags) |
-| **Animations** | CSS keyframes only — zero JS animation libraries |
-| **Fonts** | Google Fonts via CDN (Bebas Neue, Space Mono, Syne) |
-| **Responsive** | CSS Grid + clamp() for fluid cell sizing |
-
----
-
-## 🖥️ Browser Compatibility
-
-| Browser | Support |
-|---|---|
-| ✅ Chrome 88+ | Full support |
-| ✅ Firefox 85+ | Full support |
-| ✅ Safari 14+ | Full support |
-| ✅ Edge 88+ | Full support |
-| ⚠️ IE | Not supported |
-
-> Requires `backdrop-filter` support for glassmorphism effects. All modern browsers qualify.
-
----
+ 
+ 
 
 ## 📸 Screens at a Glance
 
