@@ -102,24 +102,6 @@ You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1
 
 ---
 
-## 🛠️ Local Setup
-
-No setup needed. Seriously.
-
-```bash
-# Option 1 — Double click
-open index.html
-
-# Option 2 — VS Code Live Server
-code . && open with Live Server
-
-# Option 3 — Python quick server
-python3 -m http.server 8080
-# then visit http://localhost:8080
-```
-
----
-
  
 
 ## 👤 Author
