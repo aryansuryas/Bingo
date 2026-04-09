@@ -57,24 +57,7 @@ You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1
 | **5** | **🎉 BINGO! Game Over!** |
 
  
----
-
-## 🚀 Features
-
-| Feature | Detail |
-|---|---|
-| 🎲 **Randomized Boards** | Every game generates a unique 1–25 layout for both players |
-| 🤝 **Shared Marking** | A number called by either player marks on both boards |
-| 🤖 **Smart Bot AI** | Weighted strategy: bot prefers numbers that complete near-done lines |
-| ⏱️ **Thinking Delay** | Bot waits 1–2 seconds to simulate decision-making |
-| ✅ **Win Detection** | Checks all 12 lines (5 rows + 5 cols + 2 diags) after every move |
-| 🌟 **Bingo Tracker** | B·I·N·G·O letters light up gold as you complete each line |
-| 📜 **Call History** | Side panel logs every number called, color-coded by who called it |
-| 🎆 **Win Animation** | Fireworks, modal, and glow effects on game end |
-| 🔄 **Instant Restart** | One click to reset everything and play again |
-| 📱 **Fully Responsive** | Works beautifully on desktop, tablet, and mobile |
-
----
+---ll this
  
  
  
