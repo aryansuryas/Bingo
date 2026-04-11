@@ -55,7 +55,7 @@ You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1
 |:-:|:-:|
 | 0 – 4 | Keep going… |
 | **5** | **🎉 BINGO! Game Over!** |
-
+tba
  
 ---ll this
  
