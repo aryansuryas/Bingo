@@ -49,42 +49,6 @@ You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1
 5. First to complete 5 lines → BINGO! 🎉
 ```
 
-### 🏆 Win Condition
-
-| Lines Completed | Status |
-|:-:|:-:|
-| 0 – 4 | Keep going… |
-| **5** | **🎉 BINGO! Game Over!** |
-tba
- 
----ll this
- 
- 
- 
-
- 
- 
-
- 
- 
-
-## 📸 Screens at a Glance
-
-```
-┌────────────────────────────────────────────────────────┐
-│  🧑‍💻 YOU  B I N G O        VS       B I N G O  🤖 BOT │
-│  ┌──────────────┐  [ CALLED ]  ┌──────────────┐       │
-│  │  3  17  8  ║ │  12 ● player │  5  21  3  ║ │       │
-│  │ 24  1 [12] ║ │   7 ● bot    │  8 [12] 19 ║ │       │
-│  │ 11  6  20  ║ │              │  2   6  14 ║ │       │
-│  │ ██ 15  9   ║ │              │ 25  15  ██ ║ │       │
-│  │ 13 22  4   ║ │              │  1  22   4 ║ │       │
-│  └──────────────┘              └──────────────┘       │
-└────────────────────────────────────────────────────────┘
-```
-
----
-
  
 
 ## 👤 Author
@@ -99,10 +63,7 @@ tba
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00E5FF?style=for-the-badge&logo=vercel)](.)
 
 </div>
-
----
- li
-```
+ 
 MIT License — Use it, fork it, ship it. 
 Just give credit where it's due. ✌️
 ```
