@@ -29,16 +29,4 @@
 
 </div>
 
----
-
-## ✨ What Is This?
-
-> **BINGO** is a premium single-page browser game — no installs, no frameworks, no dependencies. Just open `index.html` and play.
-
-You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1–25. Numbers are called by turns — yours when you click, the bot's when it "thinks." Any number called gets **marked on both boards simultaneously**. First to complete **5 full lines** (rows, columns, or diagonals) wins.
-
----
-
-
-
 
