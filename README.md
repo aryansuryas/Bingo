@@ -39,35 +39,6 @@ You and an AI bot each receive a **randomized 5×5 board** filled with numbers 1
 
 ---
 
-## 🎮 How to Play
 
-```
-1. Open index.html in any modern browser
-2. Your board is on the LEFT — click any number to call it
-3. That number is marked on BOTH boards instantly
-4. Wait 1–2 seconds → the Bot makes its move
-5. First to complete 5 lines → BINGO! 🎉
-```
 
- 
 
-## 👤 Author
-
-<div align="center">
-
-**Aryan Surya S**
-
-*Frontend Craftsperson · Game Developer · Design Enthusiast*
-
-[![GitHub](https://img.shields.io/badge/GitHub-@AryanSuryaS-181717?style=for-the-badge&logo=github)](https://github.com/)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-00E5FF?style=for-the-badge&logo=vercel)](.)
-
-</div>
- 
-MIT License — Use it, fork it, ship it. 
-Just give credit where it's due. ✌️
-```
-
----
-
-s
