@@ -28,5 +28,6 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=Space+Mono&size=18&duration=3000&pause=800&color=00E5FF&center=true&vCenter=true&multiline=true&width=600&height=80&lines=Pick+a+number.+Mark+your+board.+Win+5+lines.;The+bot+is+always+watching.+👁️" alt="Typing SVG" />
 
 </div>
+<>¥=
 
 
