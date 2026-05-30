@@ -1,7 +1,196 @@
-
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Game</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      max-width: 1200px;
+    }
+    
+    #menu {
+      text-align: center;
+      padding: 40px;
+    }
+    
+    #menu h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+    
+    #menu button {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    #menu button:hover {
+      background: #764ba2;
+      transform: scale(1.05);
+    }
+    
+    #gameArea {
+      display: none;
+    }
+    
+    .game-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    #turnInfo {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .game-content {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .board-container {
+      text-align: center;
+    }
+    
+    .board-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .bingo-text {
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+      color: #667eea;
+      font-weight: bold;
+    }
+    
+    .board {
+      display: grid;
+      grid-template-columns: repeat(5, 60px);
+      gap: 5px;
+      background: #ddd;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    
+    .cell {
+      background: white;
+      border: 2px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: all 0.3s;
+      user-select: none;
+    }
+    
+    .cell:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cell.p1 {
+      background: #ff6b6b;
+      color: white;
+      border-color: #ff6b6b;
+    }
+    
+    .cell.p2 {
+      background: #4ecdc4;
+      color: white;
+      border-color: #4ecdc4;
+    }
+    
+    .cell.bot {
+      background: #ffd93d;
+      color: #333;
+      border-color: #ffd93d;
+    }
+    
+    #restartBtn {
+      display: block;
+      margin-top: 20px;
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    #restartBtn:hover {
+      background: #764ba2;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="menu">
+      <h1>🎮 Bingo Game</h1>
+      <button onclick="startGame('bot')">Play vs Bot</button>
+      <button onclick="startGame('pvp')">Play vs Player</button>
+    </div>
+    
+    <div id="gameArea">
+      <div class="game-header">
+        <div id="turnInfo"></div>
+      </div>
+      
+      <div class="game-content">
+        <div class="board-container">
+          <div class="board-title" id="p1Title">Player 1</div>
+          <div class="bingo-text" id="p1Bingo">_ _ _ _ _</div>
+          <div class="board" id="board1"></div>
+        </div>
+        
+        <div class="board-container">
+          <div class="board-title" id="p2Title">Player 2</div>
+          <div class="bingo-text" id="p2Bingo">_ _ _ _ _</div>
+          <div class="board" id="board2"></div>
+        </div>
+      </div>
+      
+      <button id="restartBtn" onclick="restart()">Restart Game</button>
+    </div>
+  </div>
 
-</html></html>
 <script>
 let mode = "";
 let currentPlayer = 1;
@@ -170,3 +359,5 @@ function restart() {
   location.reload();
 }
 </script>
+</body>
+</html>
