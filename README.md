@@ -1,5 +1,6 @@
-<div align="center">
 # BINGO 
+<div align="center">
+
 
 **A fully responsive, animated 5×5 Bingo game where you challenge an AI bot.**  
 *Crafted with pure HTML · CSS · Vanilla JavaScript.*
