@@ -1,0 +1,11 @@
+ 
+ .html : Extension
+ ctrl + / for making line comment
+ <> </> : tags
+ ! + Enter : for creating boilerplate code
+ Alt + z : for wrapping the code
+ ctrl + d : for selecting the same word
+ shift + alt + f : for formatting the code
+ shift + alt + arrow keys :  duplicating
+attribute : property of tag which gives additional information about the tag <lang = en> or <class = "container"> or <id = "main">
+<P>lorem</P> : paragraph tag
