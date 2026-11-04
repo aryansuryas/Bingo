@@ -43,10 +43,7 @@ function EducationCard({ item, index }: { item: EducationMilestone; index: numbe
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="relative pl-12 pb-16 last:pb-0"
     >
-      {/* Timeline Connector */}
       <div className="absolute left-[10px] top-2 bottom-0 w-px bg-[var(--paper-line)] group-last:hidden" />
-
-      {/* Timeline Node */}
       <div className="absolute left-0 top-2 w-[21px] h-[21px] rounded-full bg-[var(--ink)] border-4 border-[var(--background)] shadow-[0_0_0_2px_var(--wine)] z-10" />
 
       <div className="bg-[var(--paper-panel)] border border-[var(--paper-line)] rounded-2xl p-8 hover:border-[var(--wine)] hover:shadow-xl hover:shadow-[var(--wine-glow)] transition-all duration-500 group">

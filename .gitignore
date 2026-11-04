@@ -25,6 +25,9 @@ pnpm-debug.log*
 *.log
 *.pid
 
+# Local Bingo database
+data/
+
 # Test and coverage output
 coverage/
 .nyc_output/

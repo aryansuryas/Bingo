@@ -122,7 +122,6 @@ export default function LeetCodeStickyCard() {
                     <span className="profile-folder-meta">
                       <span>{card.meta}</span>
                       {card.handle && <span>{card.handle}</span>}
-                      <span>VISIT PROFILE&nbsp; →</span>
                     </span>
 
                     <span className="profile-folder-divider" />
