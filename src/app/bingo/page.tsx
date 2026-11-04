@@ -143,7 +143,7 @@ export default function BingoPage() {
       <main className={styles.page}>
         <section className={styles.authCard} aria-labelledby="welcome-title">
           <Link className={styles.backLink} href="/">
-            ← Back to portfolio
+            ← Bingo home
           </Link>
           <div className={styles.brandMark}>B</div>
           <p className={styles.eyebrow}>CS50 final project</p>

@@ -1,16 +1,11 @@
-# Aryan Surya S — Portfolio and Bingo
+# Bingo — CS50 Final Project
 
-This repository contains my portfolio and a beginner-friendly CS50 Bingo final project at
-[`/bingo`](http://localhost:4028/bingo). Bingo uses the existing Next.js stack in this
-repository and stores accounts and resumable matches in a local SQLite database.
+A beginner-friendly Player vs Computer Bingo web application built for a CS50 final
+project. It uses username/password accounts and a local SQLite database to resume active
+matches.
 
 ## Features
 
-- Responsive landing experience
-- Project showcase and technology stack sections
-- Education and achievements highlights
-- Contact form with EmailJS integration
-- Resume download and portfolio navigation
 - Username/password accounts with secure password hashes
 - Resumable Player vs Computer Bingo matches
 - A clearly disabled Player vs Player “Coming Soon” mode
@@ -21,7 +16,6 @@ repository and stores accounts and resumable matches in a local SQLite database.
 - React 19
 - TypeScript
 - Tailwind CSS
-- EmailJS
 - SQLite via `better-sqlite3`
 
 ## Getting Started
@@ -42,26 +36,10 @@ Open http://localhost:4028
 
 Open http://localhost:4028/bingo to play Bingo.
 
-## Environment Variables
+## Environment and database
 
-Create a local file named `.env.local` with:
-
-```env
-NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-```
-
-## Deployment
-
-This project is ready for deployment on Vercel.
-
-## Notes
-
-- Keep `.env.local` out of version control.
-- The repository uses `.gitignore` to exclude local environment files and build output.
-
-## Bingo setup and database
+Copy `.env.example` to `.env.local` if you want to configure the database path or
+site URL. `.env.local` is ignored and must never be committed.
 
 From the repository root:
 
@@ -87,6 +65,7 @@ match.
 
 ## Project files
 
+- `src/app/page.tsx` — redirects the root URL to Bingo.
 - `src/app/bingo/page.tsx` — account screens, mode selection, and accessible game UI.
 - `src/app/bingo/bingo.module.css` — responsive Bingo styling.
 - `src/app/api/bingo/*` — server-authoritative authentication and game endpoints.
@@ -103,8 +82,6 @@ CS50 Codespaces and local demonstrations, not multi-instance production hosting.
 
 Demo video URL: _to be added before submission_
 
-How I Did ?
-Intro Idea
-genearte prompt form
-Generate Images from chatgpt
-voleect in order generate video
+## Demo video
+
+Demo video URL: _to be added before submission_
